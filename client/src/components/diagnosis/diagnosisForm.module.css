@@ -1,0 +1,18 @@
+.button{
+    width: 20vh;
+    height: 3vh;
+    background: cornflowerblue;
+    color: #ffffff;
+    border: none;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 2vh;
+}
+.buttonTitle{
+    margin-right: 10%;
+}
+.input{
+    width: 100%;
+}

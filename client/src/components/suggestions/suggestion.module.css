@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: .2vh;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.item{
+    width: 100%;
+    padding-bottom: .2vh;
+    list-style-type: none;
+    cursor: pointer;
+    text-align: center;
+    z-index: 30;
+    position: relative;
+}
+
