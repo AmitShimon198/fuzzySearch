@@ -82,8 +82,8 @@ const DiagnosisForm = () => {
 
     return (
         <>
-            {!error && <ErrorMessage message={'error'} />}
-            {!suggestionsError && <ErrorMessage message={'suggestionsError'} />}
+            {error && <ErrorMessage message={error} />}
+            {suggestionsError && <ErrorMessage message={suggestionsError} />}
             <Form onFormSubmit={onSubmit} header='Analyze you`r blood test'>
                 {!!suggestions?.length &&
                     <InputContainer>
@@ -93,14 +93,14 @@ const DiagnosisForm = () => {
                         </>
                     </InputContainer>
                 }
-                {testInputsError?.name && <span>{testInputsError?.name}</span>}
+                {testInputsError?.name && <span className={classes.errorMessage}>{testInputsError?.name}</span>}
                 <InputContainer>
                     <>
                         Blood test result:
                         <input className={classes.input} type='number' onChange={onResultChange} name='result' />
                     </>
                 </InputContainer>
-                <button type='submit' className={classes.button} disabled={!isFormValid}>
+                <button type='submit' className={`${classes.button} ${!isFormValid && classes.disabled}`} disabled={!isFormValid}>
                     <span className={classes.buttonTitle}>Submit test results</span>
                     {loading && <Spinner size='sm' animation="border" />}
                 </button>

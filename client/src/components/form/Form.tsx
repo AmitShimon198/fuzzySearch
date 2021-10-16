@@ -1,3 +1,4 @@
+import { Hr } from "../hr/hr";
 import classes from "./form.module.css";
 
 export type FormProps = {
@@ -14,6 +15,7 @@ const Form: React.FC<FormProps> = ({ children, autoComplete = 'off', header, onF
     return (<div className={classes.container}>
         <form autoComplete={autoComplete} className={classes.form} onSubmit={onSubmit}>
             <h3 className={classes.header}>{header}</h3>
+            <Hr />
             {children}
         </form>
     </div>)
