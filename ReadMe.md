@@ -21,6 +21,7 @@ Project is created with:
 
 ### Client-App:
 **To get started, go in to the root client folder, open CMD type npm install when npm finish type npm start.**
+* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 **inside the main (server) folder you will find .env file there you can configurate the server app.**
 
 ### Server-App:
