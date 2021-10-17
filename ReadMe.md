@@ -35,7 +35,11 @@ Project is created with:
 ```
 $ cd server
 $ npm install
-$ npm start-dev
+$ npm run start-dev
+
+```
+
+```
 $ cd client 
 $ npm install
 $ npm start
