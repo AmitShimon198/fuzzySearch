@@ -3,8 +3,8 @@ import React, { useState, createContext } from 'react';
 export type BloodTestResult = {
     testResults: 'GOOD' | 'BAD' | 'Unknown',
     range: number[],
-    testName:string,
-    you: number,
+    testName: string,
+    testScore: number,
     setTestResults: (data: any) => void
 }
 
@@ -12,7 +12,7 @@ export const initialState: BloodTestResult = {
     testResults: 'Unknown',
     testName: '',
     range: [],
-    you: 0,
+    testScore: 0,
     setTestResults: (data) => { }
 }
 

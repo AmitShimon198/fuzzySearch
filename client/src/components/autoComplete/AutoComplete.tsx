@@ -10,7 +10,7 @@ export type AutoCompleteProps = {
     onAutoComleateChange: ({ value, name }: { value: string; name: string; }) => void;
 }
 
-const AutoComplete:React.FC<AutoCompleteProps> = ({ suggestions, onAutoComleateChange, onItemClick, name }) => {
+const AutoComplete: React.FC<AutoCompleteProps> = ({ suggestions, onAutoComleateChange, onItemClick, name }) => {
 
     const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
     const [input, setInput] = useState<string>('')
@@ -20,7 +20,7 @@ const AutoComplete:React.FC<AutoCompleteProps> = ({ suggestions, onAutoComleateC
         ],
         includeScore: true
     })), [suggestions]);
-    const onChange = (event: any) => {
+    const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         const { value, name } = event.target;
         const fuzzyResults = fuse.search(value);
         const unLinked = fuzzyResults?.map(
@@ -37,9 +37,10 @@ const AutoComplete:React.FC<AutoCompleteProps> = ({ suggestions, onAutoComleateC
         }
     };
 
-    const onClick = (event: any) => {
-        onItemClick({ value: event.target.innerText, name });
-        setInput(event.target.innerText);
+    const onClick: React.MouseEventHandler<HTMLLIElement> = (event) => {
+        const target = event.target as HTMLLIElement;
+        onItemClick({ value: target.innerText, name });
+        setInput(target.innerText);
         setFilteredSuggestions([]);
     };
 

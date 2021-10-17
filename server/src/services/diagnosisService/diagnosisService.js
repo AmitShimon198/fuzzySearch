@@ -22,8 +22,8 @@ export const analyzeTests = ({ name, result, testName }) => {
         if (filteredTests?.length) {
             const { threshold, range } = filteredTests[0]
             const isTestGood = result < threshold;
-            return { testName: name, testResults: isTestGood ? 'GOOD' : 'BAD', range: range, you: result }
+            return { testName: name, testResults: isTestGood ? 'GOOD' : 'BAD', range: range, testScore: result }
         }
     }
-    return { testResults: 'Unknown', range: '', testName: name, you: result }
+    return { testResults: 'Unknown', range: '', testName: name, testScore: result }
 }

@@ -78,7 +78,6 @@ const DiagnosisForm = () => {
     }
 
     const isFormValid = isValid?.isNameInputValid && isValid?.isResultInputValid;
-    console.log('suggestionsError', suggestionsError);
 
     return (
         <>
@@ -88,7 +87,7 @@ const DiagnosisForm = () => {
                 {!!suggestions?.length &&
                     <InputContainer>
                         <>
-                            Blood test name:
+                            Name:
                             <AutoComplete name='name' onItemClick={onNameChange} onAutoComleateChange={onNameChange} suggestions={suggestions} />
                         </>
                     </InputContainer>
@@ -96,7 +95,7 @@ const DiagnosisForm = () => {
                 {testInputsError?.name && <span className={classes.errorMessage}>{testInputsError?.name}</span>}
                 <InputContainer>
                     <>
-                        Blood test result:
+                        Result:
                         <input className={classes.input} type='number' onChange={onResultChange} name='result' />
                     </>
                 </InputContainer>

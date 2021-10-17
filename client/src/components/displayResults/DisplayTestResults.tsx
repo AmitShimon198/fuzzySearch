@@ -8,10 +8,12 @@ const DisplayTestResults: React.FC = () => {
     const results = useContext(BloodTestResultContext);
     const history = useHistory();
     const back = () => history.goBack();
-    const { range, testResults, testName } = results;
+    const { range, testResults, testName, testScore } = results;
     const sortedRange = range?.length ? range?.sort((a, b) => a - b) : [];
-    const dengerBar = sortedRange?.length ? sortedRange[1] + (sortedRange[1] / 10) : 0
+    const [minRange, maxRange] = sortedRange;
 
+    const dangerRange = sortedRange?.length ? maxRange + (maxRange / 10) : 0
+    const getBarWeight = (range: number) => (range / maxRange) * 100
     return (
         <div className={classes.container}>
             <div className={classes.buttonContainer}>
@@ -20,13 +22,13 @@ const DisplayTestResults: React.FC = () => {
             <Card>
                 <h3>Test results for - {testName}</h3>
                 <div className={classes.content}>
-                    <div className={testResults === 'GOOD' ? classes.good : classes.bad}>{testResults}</div>
+                    <div className={testResults === 'GOOD' ? classes.good : classes.bad}>{testResults} - ({testScore})</div>
                     {sortedRange &&
                         <div className={classes.bar}>
-                            <ProgressBar animated={true}>
-                                <ProgressBar animated={true} striped variant="success" now={sortedRange[0]} label={sortedRange[0]} key={'GOOD' + 1} />
-                                <ProgressBar animated={true} striped variant="warning" now={sortedRange[1]} label={sortedRange[1]} key={'OK' + 2} />
-                                <ProgressBar animated={true} variant="danger" now={dengerBar} label={dengerBar} key={'BAD' + 3} />
+                            <ProgressBar animated={true} >
+                                <ProgressBar animated={true} striped variant="success" now={getBarWeight(minRange)} label={minRange} key={'GOOD' + 1} />
+                                <ProgressBar animated={true} striped variant="warning" now={getBarWeight(maxRange)} label={maxRange} key={'OK' + 2} />
+                                <ProgressBar animated={true} variant="danger" now={dangerRange} label={dangerRange} key={'BAD' + 3} />
                             </ProgressBar>
                         </div>
                     }

@@ -1,8 +1,10 @@
 .container{
     border-radius: 5px;
     padding-top: 2vh;
-    height: 50%;
+    height: 30%;
     width: 50%;
+    min-width: 300px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;

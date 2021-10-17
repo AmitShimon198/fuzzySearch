@@ -1,6 +1,7 @@
 .button{
     width: 20vh;
     height: 3vh;
+    font-size: 1.5vh;
     background: cornflowerblue;
     color: #ffffff;
     border: none;
