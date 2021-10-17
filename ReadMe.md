@@ -28,7 +28,7 @@ Project is created with:
 **inside the main (client) folder, you will find the .env file there you can configure the client app**
 
 ### dataSet
-**inside the main folder (where you can find both client and server folder you will find the dataset.json file, put the file in your preferred folder and link the location, inside the server folder, you will discover .env file with property name BLOOD_TEST_CONFIG_LOCATION edit its value and you good to go** 
+**inside the main folder (where you can find both client and server folders you will find the bloodTestConfig.json file, put the file in your preferred folder and link the location, inside the server folder, you will discover .env file with property name BLOOD_TEST_CONFIG_LOCATION edit its value and you good to go** 
 ** **
 ```
 $ cd client 
