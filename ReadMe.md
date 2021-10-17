@@ -20,24 +20,24 @@ Project is created with:
 
 ## Setup
 
-### Client-App:
-**To get started, go in to the root client folder, open CMD type npm install when npm finish type npm start.**
-* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-**inside the main (server) folder you will find .env file there you can configurate the server app.**
+### DataSet
+**inside the main folder (where you can find both client and server folders you will find the bloodTestConfig.json file, put the file in your preferred folder and link the location, inside the server folder, you will discover .env file with property name BLOOD_TEST_CONFIG_LOCATION edit its value and you good to go.**
 
 ### Server-App:
 **To get started, go into the root server folder, open CMD type npm install when npm finish type npm run start-dev.**
 **inside the main (client) folder, you will find the .env file there you can configure the client app.**
 
-### DataSet
-**inside the main folder (where you can find both client and server folders you will find the bloodTestConfig.json file, put the file in your preferred folder and link the location, inside the server folder, you will discover .env file with property name BLOOD_TEST_CONFIG_LOCATION edit its value and you good to go.** 
+### Client-App:
+**To get started, go in to the root client folder, open CMD type npm install when npm finish type npm start.**
+* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**inside the main (server) folder you will find .env file there you can configurate the server app.**
 
 ```
-$ cd client 
-$ npm install
-$ npm start
 $ cd server
 $ npm install
 $ npm start-dev
+$ cd client 
+$ npm install
+$ npm start
 
 ```
