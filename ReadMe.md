@@ -14,7 +14,7 @@ Project is created with:
 * BootStrap version 5.1.3
 * fuse.js version 6.4.6 
 ### Server-App:
-* nodejs 
+* nodejs - **make sure you have it installed on your machine**
 * express version 4.17.1
 
 ## Setup
