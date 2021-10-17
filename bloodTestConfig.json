@@ -1,0 +1,29 @@
+{  
+  "bloodTestConfig":[  
+     {  
+        "name":"HDL Cholesterol",
+        "threshold":40,
+		"range":[10, 35]
+     },
+     {  
+        "name":"LDL Cholesterol",
+        "threshold":100,
+		"range":[40, 95]
+     },
+     {  
+        "name":"A1C",
+        "threshold":4,
+		"range":[1, 5]
+     },
+     {  
+        "name":"WBCs (billion/L)",
+        "threshold":12,
+		"range":[3.5, 10.5]
+     },
+     {  
+        "name":"Hb (g/dL)",
+        "threshold":19,
+		"range":[13, 17]
+     }
+  ]
+}
