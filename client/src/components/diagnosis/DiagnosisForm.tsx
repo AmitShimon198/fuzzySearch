@@ -10,7 +10,7 @@ import { nameRegex } from '../util/regexPatterns';
 import classes from './diagnosisForm.module.css';
 import { useHistory } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
-import ErrorMessage from '../error/errorMessage';
+import ErrorList from '../error/ErrorList';
 const TEST_INPUTS_INITIAL_STATE = {
     name: undefined,
     result: undefined
@@ -78,11 +78,11 @@ const DiagnosisForm = () => {
     }
 
     const isFormValid = isValid?.isNameInputValid && isValid?.isResultInputValid;
-
+    let errorsList = suggestionsError ? [suggestionsError] : []
+    errorsList = error ? [...errorsList, error] : [...errorsList]
     return (
         <>
-            {error && <ErrorMessage message={error} />}
-            {suggestionsError && <ErrorMessage message={suggestionsError} />}
+            {< ErrorList errors={errorsList} />}
             <Form onFormSubmit={onSubmit} header='Analyze you`r blood test'>
                 {!!suggestions?.length &&
                     <InputContainer>
